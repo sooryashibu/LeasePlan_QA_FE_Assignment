@@ -1,0 +1,14 @@
+{
+  "name": "leaseplan_qa_fe_assignment",
+  "version": "1.0.0",
+  "description": "FE Assignment for QA hire",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Soorya",
+  "license": "ISC",
+  "dependencies": {
+    "webdriverio": "^7.7.8"
+  }
+}
