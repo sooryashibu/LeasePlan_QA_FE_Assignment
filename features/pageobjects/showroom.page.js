@@ -45,7 +45,7 @@ class ShowroomPage extends Page {
         await $$('//span[@data-component=\'Heading\']//span[@data-component=\'LocalizedPrice\']').then(async localizedPrices => {
             for (let i = 0; i < localizedPrices.length; i++) {
                 await localizedPrices[i].getText().then(priceText => {
-                    const price = parseInt(priceText.split(" ")[1]);
+                    const price = parseInt(priceText.split(" ")[1].replace(".",""));
                     expect(from < price && price < to).toBe(true);
                 })
 
@@ -116,9 +116,8 @@ class ShowroomPage extends Page {
         await $$('//span[@data-component=\'Heading\']//span[@data-component=\'LocalizedPrice\']').then(async localizedPrices => {
             for (let i = 0; i < localizedPrices.length; i++) {
                 await localizedPrices[i].getText().then(priceText => {
-                    const price = parseInt(priceText.split(" ")[1]);
+                    const price = parseInt(priceText.split(" ")[1].replace(".",""));
                     actualPrices.push(price);
-                    console.log(price);
                 });
             }
         });
